@@ -24,6 +24,8 @@
  
 
 </style>
+
+ @yield('customstyle')
 </head>
 
 <body class="nav-md">
@@ -58,5 +60,7 @@
     
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+
+       @yield('customscript')
   </body>
 </html>
