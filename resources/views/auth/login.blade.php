@@ -34,7 +34,7 @@
         <div class="animate form login_form">
           <section class="login_content">
           <form method="POST" action="{{ route('login') }}">
-              <h1>Login Form</h1>
+              <h1>{{ __('login.form-title') }}</h1>
               @csrf
               <div>
               <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>

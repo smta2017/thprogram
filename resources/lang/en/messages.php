@@ -3,6 +3,5 @@
 // resources/lang/en/messages.php
 
 return [
-    'welcome' => 'Welcome to our application',
-    'csssheet' => 'custom.min'
+    'welcome' => 'Welcome to our application'
 ];
