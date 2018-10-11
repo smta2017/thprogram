@@ -78,19 +78,45 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form>
+          <form method="POST" action="{{ route('register') }}">
+                        @csrf
               <h1>Create Account</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                
+                <input id="name" type="text" placeholder="Username" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                    @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
+                
+                <input id="email" placeholder="Email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+              
+                <input id="password" type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
+              
+              <input id="password-confirm" type="password" placeholder="Confirm Password" class="form-control" name="password_confirmation" required>
+            </div>
+              <div>
+              <button type="submit" class="btn btn-default submit">  Submit </button>
               </div>
 
               <div class="clearfix"></div>
