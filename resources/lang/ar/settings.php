@@ -2,5 +2,7 @@
 
 
 return [
-    'appdir' => 'rtl'
+    'appdir' => 'rtl',
+    'csssheet' => 'custom-ar',
+    'nav_menu_dir' => 'left'
 ];

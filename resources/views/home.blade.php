@@ -42,7 +42,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  {{ __('messages.welcome') }}
+                  {{ __('settings.appdir') }}
                   </div>
                 </div>
               </div>

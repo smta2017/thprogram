@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html dir="{{ __('settings.appdir') }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
@@ -17,7 +17,7 @@
   <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
 
   <!-- Custom Theme Style -->
-  <link href="build/css/custom.css" rel="stylesheet">
+  <link href="build/css/{{ __('settings.csssheet') }}.css" rel="stylesheet">
 
   <style>
 

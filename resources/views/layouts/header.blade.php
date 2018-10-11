@@ -6,7 +6,7 @@
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
 
-              <ul class="nav navbar-nav navbar-left">
+              <ul class="nav navbar-nav navbar-{{ __('settings.nav_menu_dir') }}">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="images/img.jpg" alt="">John Doe
