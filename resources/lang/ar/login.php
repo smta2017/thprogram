@@ -3,7 +3,7 @@
 // resources/lang/en/messages.php
 
 return [
-    'form-title' => 'تسجيل الدخول',
+    'form-title' => 'شاشة تسجيل الدخول',
   
 
     // ''=>'',
