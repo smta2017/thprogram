@@ -242,7 +242,7 @@ html , body{
     margin-bottom: 35px
 }
 .menu_section h3 {
-    padding-left: 15px;
+    padding-right: 15px;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: .5px;
@@ -920,7 +920,7 @@ footer {
     display: block
 }
 .nav-sm footer {
-    margin-left: 70px
+    margin-right: 70px
 }
 .footer_fixed footer {
     position: fixed;

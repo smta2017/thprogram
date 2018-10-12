@@ -12,7 +12,7 @@
             </div>
             <div class="profile_info">
               <span>مرحباً,</span>
-              <h2>ايمن</h2>
+              <h2>{{ Auth::user()->name }}</h2>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -23,21 +23,33 @@
           <!-- sidebar menu -->
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
-              <h3>General</h3>
+              <h3>عام</h3>
               <ul class="nav side-menu">
-                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+              <li><a><i class="fa fa-edit"></i> المبيعات <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="index2.html">Dashboard2</a></li>
-                    <li><a href="index3.html">Dashboard3</a></li>
+                    <li><a href="index.html">فاتورة جديدة</a></li>
+                    <li><a href="index2.html">مرتجعات مبيعات</a></li>
+                    <li><a href="index3.html">استعلام</a></li>
                   </ul>
                 </li>
+                <li><a><i class="fa fa-database"></i> المخزن <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="form.html">عرص الاصناف</a></li>
+                   </ul>
+                </li>
+                <li><a><i class="fa fa-shopping-cart"></i> المشتريات <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="form.html">فاتورة مشتريات</a></li>
+                    <li><a href="form.html">مرتجعات مشتريات</a></li>
+                   </ul>
+                </li>
+                
               </ul>
             </div>
             <div class="menu_section">
-              <h3>Live On</h3>
+              <h3>التحكم</h3>
               <ul class="nav side-menu">
-                                  
+
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
