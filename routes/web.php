@@ -24,7 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 Route::get('welcome/{locale}', function ($locale) {
     App::setLocale($locale);
-
     echo __('messages.welcome');
 });
 
