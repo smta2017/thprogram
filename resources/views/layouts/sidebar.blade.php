@@ -25,7 +25,7 @@
             <div class="menu_section">
               <h3>عام</h3>
               <ul class="nav side-menu">
-              <li><a><i class="fa fa-edit"></i> المبيعات <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i> المبيعات <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="index.html">فاتورة جديدة</a></li>
                     <li><a href="index2.html">مرتجعات مبيعات</a></li>
@@ -41,19 +41,24 @@
                   <ul class="nav child_menu">
                     <li><a href="form.html">فاتورة مشتريات</a></li>
                     <li><a href="form.html">مرتجعات مشتريات</a></li>
+                    <li><a href="suppliers">الموردين</a></li>
                    </ul>
                 </li>
-                
               </ul>
             </div>
             <div class="menu_section">
               <h3>التحكم</h3>
               <ul class="nav side-menu">
-
+                <li>
+                  <a><i class="fa fa-shopping-cart"></i> الضبط <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="form.html"> المخازن </a></li>
+                        <li><a href="itemnamecreate"> مسميات الاصناف </a></li>
+                    </ul>
+                  </li>
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
-
             </div>
             <!-- /sidebar menu -->
 

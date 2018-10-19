@@ -27,6 +27,12 @@ Route::get('welcome/{locale}', function ($locale) {
     echo __('messages.welcome');
 });
 
+//-----------------------------  supplier  ------------------------------
+Route::get('/suppliercreate', 'SupplierController@create');
+
+
+//-----------------------------  item Name  ------------------------------
+Route::get('/itemnamecreate', 'ItemnameController@create');
 
 
  
