@@ -630,9 +630,10 @@ table.no-margin .progress {
 .col-lg-12 {
     position: relative;
     min-height: 1px;
-    float: left;
+    float: right;
     padding-right: 10px;
-    padding-left: 10px
+    padding-left: 10px;
+    /* text-align: left !important; */
 }
 .row {
     margin-right: -10px;
@@ -2265,7 +2266,7 @@ select.parsley-error {
     transition: 0.42s
 }
 .item .alert {
-    float: left;
+    float: right;
     margin: 0 0 0 20px;
     padding: 3px 10px;
     color: #FFF;

@@ -36,7 +36,8 @@ class ItemnameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $itemname = Itemname::new();
+        $itemname->sname = $request->sname;
     }
 
     /**
