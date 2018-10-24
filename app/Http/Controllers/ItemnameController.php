@@ -38,6 +38,7 @@ class ItemnameController extends Controller
     {
         $itemname = Itemname::new();
         $itemname->sname = $request->sname;
+        $itemname->save();
     }
 
     /**

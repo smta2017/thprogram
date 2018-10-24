@@ -49,9 +49,9 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  <form class="form-horizontal form-label-left" novalidate>
+                  <form class="form-horizontal form-label-left" method="POST" action="itemnamestore">
 
-                     
+                     @csrf
                       <span class="section">بيانات المسمى</span>
 
                       <div class="item form-group">

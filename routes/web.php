@@ -33,6 +33,6 @@ Route::get('/suppliercreate', 'SupplierController@create');
 
 //-----------------------------  item Name  ------------------------------
 Route::get('/itemnamecreate', 'ItemnameController@create');
-Route::post('/itemnamecreate', 'ItemnameController@store');
+Route::post('/itemnamestore', 'ItemnameController@store');
 
  
