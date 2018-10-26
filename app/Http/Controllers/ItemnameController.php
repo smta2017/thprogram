@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Itemname;
 use Illuminate\Http\Request;
+use App\Http\Requests\ItemNameValidate;
 
 class ItemnameController extends Controller
 {
@@ -34,9 +35,9 @@ class ItemnameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,ItemNameValidate $validate)
     {
-        $itemname = Itemname::new();
+        $itemname = new Itemname();
         $itemname->sname = $request->sname;
         $itemname->save();
     }

@@ -58,7 +58,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">مسمى الصنف <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="sname" class="form-control col-md-7 col-xs-12" data-validate-length-range="5" data-validate-words="1" name="name" placeholder="ادخل اسم  مثال  لوحة مفاتيح" required="required" type="text">
+                          <input id="sname" class="form-control col-md-7 col-xs-12" data-validate-length-range="5" data-validate-words="1" name="sname" placeholder="ادخل اسم  مثال  لوحة مفاتيح" required="required" type="text">
                         </div>
                       </div>
                      

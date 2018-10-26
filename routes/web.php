@@ -36,3 +36,4 @@ Route::get('/itemnamecreate', 'ItemnameController@create');
 Route::post('/itemnamestore', 'ItemnameController@store');
 
  
+//yousif
