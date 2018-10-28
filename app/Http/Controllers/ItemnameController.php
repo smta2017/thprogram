@@ -25,8 +25,10 @@ class ItemnameController extends Controller
      */
     public function create()
     {
-        $test ='create';
-       return view('ItemName.create',compact('test'));
+    //     $test ='create';
+    //    return view('ItemName.create',compact('test'));
+
+    echo "create";
     }
 
     /**
@@ -37,9 +39,10 @@ class ItemnameController extends Controller
      */
     public function store(Request $request,ItemNameValidate $validate)
     {
-        $itemname = new Itemname();
-        $itemname->sname = $request->sname;
-        $itemname->save();
+        // $itemname = new Itemname();
+        // $itemname->sname = $request->sname;
+        // $itemname->save();
+        echo "store";
     }
 
     /**
@@ -50,7 +53,7 @@ class ItemnameController extends Controller
      */
     public function show(Itemname $itemname)
     {
-        //
+        echo "show";
     }
 
     /**
@@ -59,9 +62,12 @@ class ItemnameController extends Controller
      * @param  \App\Itemname  $itemname
      * @return \Illuminate\Http\Response
      */
-    public function edit(Itemname $itemname)
+    public function edit(Request $request,Itemname $itemname)
     {
-        //
+        // $itemname =  Itemname::find($request->id);
+        // return view('ItemName.edit',compact('itemname'));
+        echo "edit";
+       
     }
 
     /**
@@ -73,7 +79,7 @@ class ItemnameController extends Controller
      */
     public function update(Request $request, Itemname $itemname)
     {
-        //
+        echo 'update';
     }
 
     /**
@@ -84,6 +90,6 @@ class ItemnameController extends Controller
      */
     public function destroy(Itemname $itemname)
     {
-        //
+        echo "destroy";
     }
 }

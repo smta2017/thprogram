@@ -48,7 +48,9 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image">
+                        {!! HTML::image('images/img.jpg', 'alt text', array('class' => 'img-circle profile_img')) !!}
+                        </span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>

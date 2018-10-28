@@ -8,7 +8,8 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            
+            {!! HTML::image('images/img.jpg', 'alt text', array('class' => 'img-circle profile_img')) !!}
             </div>
             <div class="profile_info">
               <span>مرحباً,</span>

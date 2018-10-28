@@ -9,15 +9,18 @@
 
   <title>البرنامج! | </title>
 
-  <!-- Bootstrap -->
-  <link href="vendors/bootstrap/dist/css/bootstrap-ar.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- NProgress -->
-  <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+  
 
+  <!-- Bootstrap -->
+  {!! Html::style('vendors/bootstrap/dist/css/bootstrap-ar.css') !!}
+  <!-- Font Awesome -->
+  {!! Html::style('vendors/font-awesome/css/font-awesome.min.css') !!}
+  <!-- NProgress -->
+  {!! Html::style('vendors/nprogress/nprogress.css') !!}
   <!-- Custom Theme Style -->
-  <link href="build/css/{{ __('settings.csssheet') }}.css" rel="stylesheet">
+  {!! Html::style('build/css/custom-ar.css') !!}
+
+  
 
   <style>
 
@@ -48,18 +51,19 @@
         <!-- /footer content -->
       </div>
     </div>
-
+  
     <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    {!! Html::script('vendors/jquery/dist/jquery.min.js') !!}
     <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    {!! Html::script('vendors/bootstrap/dist/js/bootstrap.min.js') !!}
     <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    {!! Html::script('vendors/fastclick/lib/fastclick.js') !!}
     <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
+    {!! Html::script('vendors/nprogress/nprogress.js') !!}
     
     <!-- Custom Theme Scripts -->
-    <script src="build/js/custom.min.js"></script>
+  
+    {!! Html::script('build/js/custom.min.js') !!}
 
        @yield('customscript')
   </body>

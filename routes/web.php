@@ -28,12 +28,14 @@ Route::get('welcome/{locale}', function ($locale) {
 });
 
 //-----------------------------  supplier  ------------------------------
-Route::get('/suppliercreate', 'SupplierController@create');
+ 
 
 
 //-----------------------------  item Name  ------------------------------
-Route::get('/itemnamecreate', 'ItemnameController@create');
-Route::post('/itemnamestore', 'ItemnameController@store');
+Route::resource('itemname', 'ItemnameController');
+// Route::get('/itemnamecreate', 'ItemnameController@create');
+// Route::post('/itemnamestore', 'ItemnameController@store');
+// Route::get('/itemnameedit/{id}', 'ItemnameController@edit');
+// Route::post('/itemnameupdate', 'ItemnameController@edit');
 
- 
-//yousif
+  
