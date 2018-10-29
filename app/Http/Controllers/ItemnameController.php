@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Itemname;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Requests\ItemNameValidate;
+use App\Http\Resources\Itemname as ItemnameResources;
 
 class ItemnameController extends Controller
 {
@@ -15,7 +17,8 @@ class ItemnameController extends Controller
      */
     public function index()
     {
-        //
+        $itemnames=Itemname::paginate(3);
+        return ItemnameResources::collection($itemnames);
     }
 
     /**
@@ -28,7 +31,7 @@ class ItemnameController extends Controller
     //     $test ='create';
     //    return view('ItemName.create',compact('test'));
 
-    echo "create";
+    return "create";
     }
 
     /**
@@ -42,7 +45,7 @@ class ItemnameController extends Controller
         // $itemname = new Itemname();
         // $itemname->sname = $request->sname;
         // $itemname->save();
-        echo "store";
+        return "store";
     }
 
     /**
@@ -51,9 +54,10 @@ class ItemnameController extends Controller
      * @param  \App\Itemname  $itemname
      * @return \Illuminate\Http\Response
      */
-    public function show(Itemname $itemname)
+    public function show($id)
     {
-        echo "show";
+        $itemname=Itemname::findOrFail($id);
+        return new ItemnameResources($itemname);
     }
 
     /**
@@ -62,11 +66,11 @@ class ItemnameController extends Controller
      * @param  \App\Itemname  $itemname
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,Itemname $itemname)
+    public function edit(Itemname $itemname)
     {
         // $itemname =  Itemname::find($request->id);
         // return view('ItemName.edit',compact('itemname'));
-        echo "edit";
+        return "edit_" . $itemname;
        
     }
 
@@ -79,7 +83,7 @@ class ItemnameController extends Controller
      */
     public function update(Request $request, Itemname $itemname)
     {
-        echo 'update';
+        return 'update';
     }
 
     /**
@@ -90,6 +94,6 @@ class ItemnameController extends Controller
      */
     public function destroy(Itemname $itemname)
     {
-        echo "destroy";
+        return "destroy_" .$itemname;
     }
 }

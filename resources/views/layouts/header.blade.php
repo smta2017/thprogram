@@ -9,7 +9,7 @@
               <ul class="nav navbar-nav navbar-{{ __('settings.nav_menu_dir') }}">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt=""> {{ Auth::user()->name }}
+                  {!! HTML::image('images/img.jpg', 'alt text') !!} {{ Auth::user()->name }}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

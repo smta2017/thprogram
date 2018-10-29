@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//list of item name's
+// Route::get('itemnames','ItemnameController@index') ;
+Route::resource('itemname', 'ItemnameController');
