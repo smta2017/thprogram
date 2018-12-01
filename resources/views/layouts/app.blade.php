@@ -6,7 +6,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <script>window.laravel = { csrfToken: '{{ csrf_token() }}'  }</script>
   <title>البرنامج! | </title>
 
   
@@ -16,7 +17,7 @@
   <!-- Font Awesome -->
   {!! Html::style('vendors/font-awesome/css/font-awesome.min.css') !!}
   <!-- NProgress -->
-  {!! Html::style('vendors/nprogress/nprogress.css') !!}
+  <!-- {!! Html::style('vendors/nprogress/nprogress.css') !!} -->
   <!-- Custom Theme Style -->
   {!! Html::style('build/css/custom-ar.css') !!}
 
@@ -51,7 +52,9 @@
         <!-- /footer content -->
       </div>
     </div>
+ 
   
+       <script src="{{ asset('js/app.js') }}"></script>
     <!-- jQuery -->
     {!! Html::script('vendors/jquery/dist/jquery.min.js') !!}
     <!-- Bootstrap -->
@@ -65,6 +68,10 @@
   
     {!! Html::script('build/js/custom.min.js') !!}
 
+
        @yield('customscript')
+
+       
+          
   </body>
 </html>

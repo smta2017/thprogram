@@ -32,7 +32,15 @@ Route::get('welcome/{locale}', function ($locale) {
 
 
 //-----------------------------  item Name  ------------------------------
-// Route::resource('itemname', 'ItemnameController');
+   Route::resource('itemname', 'ItemnameController');
+
+
+
+
+
+
+   // Route::get('/test','api\TestController@getTest');
+// Route::get('/itemname','apis\ItemnameController@getTest');
 // Route::get('/itemnamecreate', 'ItemnameController@create');
 // Route::post('/itemnamestore', 'ItemnameController@store');
 // Route::get('/itemnameedit/{id}', 'ItemnameController@edit');

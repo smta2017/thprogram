@@ -1,11 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
-use App\test;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class TestController extends Controller
+ use App\itemname;
+use App\Http\Resources\Itemname as itemnameResource;
+
+class itemnameApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +18,9 @@ class TestController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $itemnames = itemname::paginate(5);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return itemnameResource::collection($itemnames);
     }
 
     /**
@@ -41,21 +37,10 @@ class TestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(test $test)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\test  $test
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(test $test)
+    public function show($id)
     {
         //
     }
@@ -64,10 +49,10 @@ class TestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, test $test)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +60,10 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(test $test)
+    public function destroy($id)
     {
         //
     }

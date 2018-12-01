@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
+use App\test2;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class PhotoController extends Controller
+class Test2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +13,16 @@ class PhotoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         //
     }
@@ -31,10 +41,21 @@ class PhotoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\test2  $test2
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(test2 $test2)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\test2  $test2
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(test2 $test2)
     {
         //
     }
@@ -43,10 +64,10 @@ class PhotoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\test2  $test2
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, test2 $test2)
     {
         //
     }
@@ -54,10 +75,10 @@ class PhotoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\test2  $test2
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(test2 $test2)
     {
         //
     }

@@ -17,7 +17,9 @@ class Itemname extends JsonResource
         // return parent::toArray($request);
 
         return [
+            
             'sname' => $this->sname
+
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Itemname extends Model
+class test2 extends Model
 {
     //
 }
