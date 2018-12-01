@@ -18,7 +18,7 @@ class itemnameApiController extends Controller
      */
     public function index()
     {
-        $itemnames = itemname::paginate(5);
+        $itemnames = itemname::paginate(9);
 
         return itemnameResource::collection($itemnames);
     }

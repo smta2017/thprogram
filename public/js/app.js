@@ -47338,6 +47338,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47350,6 +47353,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             pagination: {},
             edit: false
         };
+    },
+    created: function created() {
+        this.fetchItemnames();
+    },
+
+    methods: {
+        fetchItemnames: function fetchItemnames() {
+            var _this = this;
+
+            fetch('api/itemname').then(function (res) {
+                return res.json();
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.itemnames = res.data;
+            });
+        }
     }
 });
 
@@ -47361,16 +47380,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _c("h2", [_vm._v("item Names data")]),
+      _vm._v(" "),
+      _vm._l(_vm.itemnames, function(itemname) {
+        return _c("div", { key: itemname.id }, [
+          _c("p", [_vm._v(_vm._s(itemname.sname))])
+        ])
+      })
+    ],
+    2
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h2", [_vm._v("item Names data")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
