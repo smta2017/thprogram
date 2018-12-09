@@ -47341,13 +47341,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             itemnames: [],
             itemname: {
-                sname: ''
+                sname: '',
+                sname2: 'test'
             },
             itemname_id: '',
             pagination: {},
@@ -47359,15 +47395,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        fetchItemnames: function fetchItemnames() {
+        fetchItemnames: function fetchItemnames(page_url) {
             var _this = this;
 
-            fetch('api/itemname').then(function (res) {
+            var vm = this;
+            page_url = page_url || 'api/itemname';
+            fetch(page_url).then(function (res) {
                 return res.json();
             }).then(function (res) {
                 // console.log(res.data);
                 _this.itemnames = res.data;
+                vm.makePagination(res.meta, res.links);
+            }).catch(function (err) {
+                return console.log(err);
             });
+        },
+        makePagination: function makePagination(meta, links) {
+            var pagination = {
+                current_page: meta.current_page,
+                last_page: meta.last_page,
+                next_page_url: links.next,
+                prev_page_url: links.prev
+            };
+
+            this.pagination = pagination;
+        },
+        deleteitemname: function deleteitemname(id) {
+            var _this2 = this;
+
+            if (confirm('are you sure?')) {
+                fetch('api/itemname/' + id, {
+                    method: 'delete'
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (data) {
+                    _this2.fetchItemnames();
+                });
+            }
+            alert('Item Name Deleted');
         }
     }
 });
@@ -47380,21 +47445,157 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h2", [_vm._v("item Names data")]),
+  return _c("div", [
+    _c("h2", [_vm._v("مسميات الاصناف")]),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.itemname.sname2,
+          expression: "itemname.sname2"
+        }
+      ],
+      attrs: { type: "text" },
+      domProps: { value: _vm.itemname.sname2 },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.$set(_vm.itemname, "sname2", $event.target.value)
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("h1", [_vm._v(_vm._s(_vm.itemname.sname2))]),
+    _vm._v(" "),
+    _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+      _c("ul", { staticClass: "pagination" }, [
+        _c(
+          "li",
+          {
+            staticClass: "page-item",
+            class: [{ disabled: !_vm.pagination.prev_page_url }]
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass: "page-link",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    _vm.fetchItemnames(_vm.pagination.prev_page_url)
+                  }
+                }
+              },
+              [_vm._v("Previous")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("li", { staticClass: "page-item disabled" }, [
+          _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+            _vm._v(
+              "page " +
+                _vm._s(_vm.pagination.current_page) +
+                " of " +
+                _vm._s(_vm.pagination.last_page)
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "li",
+          {
+            staticClass: "page-item",
+            class: [{ disabled: !_vm.pagination.next_page_url }]
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass: "page-link",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    _vm.fetchItemnames(_vm.pagination.next_page_url)
+                  }
+                }
+              },
+              [_vm._v("Next")]
+            )
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table table-hover" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _vm._l(_vm.itemnames, function(itemname) {
-        return _c("div", { key: itemname.id }, [
-          _c("p", [_vm._v(_vm._s(itemname.sname))])
-        ])
-      })
-    ],
-    2
-  )
+      _c(
+        "tbody",
+        _vm._l(_vm.itemnames, function(itemname) {
+          return _c("tr", { key: itemname.id }, [
+            _c("td", [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(itemname.sname) +
+                  "\n                "
+              )
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      _vm.deleteitemname(itemname.id)
+                    }
+                  }
+                },
+                [_vm._v("حذف   ")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(1, true)
+          ])
+        })
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("مسمى الصنف")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("حذف")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("تعديل")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("a", { staticClass: "btn btn-info", attrs: { href: "#" } }, [
+        _vm._v("تعديل")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

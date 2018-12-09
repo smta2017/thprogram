@@ -14,16 +14,16 @@ class IteamNameTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Factory::create();
+        // $faker = Factory::create();
 
-        itemname::truncate();
+        // itemname::truncate();
 
-        foreach (range(1,100) as $i) {
+        // foreach (range(1,100) as $i) {
             
-            $itemname = itemname::create([
-                'sname' => $faker->name
-            ]);
+        //     $itemname = itemname::create([
+        //         'sname' => $faker->name
+        //     ]);
             
-        }
+        // }
     }
 }

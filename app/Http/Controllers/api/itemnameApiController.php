@@ -31,7 +31,12 @@ class itemnameApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $itemname=$request->isMethod('put') ? itemname::findOrFail($request->id) : new itemname;
+        $itemname->sname = $request->sname;
+        if($itemname->save()){
+               return new itemnameResource($itemname);
+         }
+   
     }
 
     /**
@@ -42,7 +47,8 @@ class itemnameApiController extends Controller
      */
     public function show($id)
     {
-        //
+       $itemname = itemname::findOrFail($id);
+       return new itemnameResource($itemname);
     }
 
     /**
@@ -54,7 +60,13 @@ class itemnameApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // return $request->sname . " update " . $id;
+         $itemname = itemname::find($id);
+         $itemname->sname = $request->sname;
+        if ($itemname->save()) {
+             return new itemnameResource($itemname);
+          }
     }
 
     /**
@@ -65,6 +77,10 @@ class itemnameApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $itemname = itemname::findOrFail($id);
+
+       if($itemname->delete()){
+        return new itemnameResource($itemname);
+       }
     }
 }
