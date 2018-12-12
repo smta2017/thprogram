@@ -37,6 +37,33 @@ Route::get('welcome/{locale}', function ($locale) {
 
 
 
+//-----------------------------  item Name  ------------------------------
+   Route::resource('store', 'StoreController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    // Route::get('/test','api\TestController@getTest');

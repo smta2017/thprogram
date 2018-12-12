@@ -1,0 +1,17 @@
+database table
+migration
+modal
+Api resource
+API Controller
+API route
+controller
+route
+
+
+//--------   VUE   ---------
+
+
+component C
+component R
+component U
+component D

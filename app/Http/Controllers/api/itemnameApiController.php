@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\api;
 
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
- use App\itemname;
+use App\itemname;
 use App\Http\Resources\Itemname as itemnameResource;
 
 class itemnameApiController extends Controller
@@ -19,16 +18,10 @@ class itemnameApiController extends Controller
     public function index()
     {
         $itemnames = itemname::paginate(9);
-
         return itemnameResource::collection($itemnames);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         $itemname=$request->isMethod('put') ? itemname::findOrFail($request->id) : new itemname;
@@ -39,25 +32,13 @@ class itemnameApiController extends Controller
    
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
        $itemname = itemname::findOrFail($id);
        return new itemnameResource($itemname);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, $id)
     {
 

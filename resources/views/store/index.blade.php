@@ -52,10 +52,7 @@
                  
                     <div id="app">
                          <div class="continer">
-                         <itemnamepaginate>
-                         </itemnamepaginate>
-                           <itemnames>
-                           </itemnames>
+                            <stores></stores>
                          </div>
                     </div>
                  
